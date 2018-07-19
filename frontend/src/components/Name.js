@@ -1,16 +1,17 @@
 import React from 'react';
+import axios from 'axios';
 
-const handleChange = (event) => {
-  //this.setState({ name: event.target.value });
-  //setName({ name: event.target.value });
+const handleSubmit = (event, postName) => {
+  event.preventDefault();
+  postName();
 }
 
-const Name = ({ name, setName }) => (
+const Name = ({ name, setName, postName }) => (
   <section>
-    <form>
+    <form onSubmit={(event) => handleSubmit(event, postName)}>
       <label>Enter your name</label>
       <input type="text" value={name} onChange={(event) => setName(event.target.value)} />
-      <button>Enter</button>
+      <button type="submit">Enter</button>
     </form>
   </section>
 )
