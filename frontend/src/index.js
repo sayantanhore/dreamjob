@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-//import { createStore, applyMiddleware } from 'redux';
-//import { postName } from './middlewares';
-//import reducers from './reducers';
-import './index.css';
-import App from './App';
+import { HashRouter as Router, Route } from 'react-router-dom';
+
 import registerServiceWorker from './registerServiceWorker';
 import store from './store';
+import './index.css';
+import App from './App';
 
-//const store = createStore(reducers, applyMiddleware(postName));
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById('root')
 );

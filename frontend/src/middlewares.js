@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { post } from './data';
 
 export const postName = store => next => action => {
