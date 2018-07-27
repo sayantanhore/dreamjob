@@ -1,4 +1,5 @@
 import { post } from './data';
+import { changeState } from './actions';
 
 export const postName = store => next => action => {
   console.log(action)
@@ -9,6 +10,7 @@ export const postName = store => next => action => {
       name: action.name
     }).then(() => {
       console.log('hello');
+      next(changeState());
     });
   }
   
